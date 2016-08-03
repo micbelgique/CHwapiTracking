@@ -1,4 +1,4 @@
-# DevCamp2016-Team1 #
+# DevCamp2016-TeamOne #
 
 Welcome to the __TeamOne__ branch!
 
