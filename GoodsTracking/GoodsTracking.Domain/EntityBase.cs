@@ -10,7 +10,7 @@ namespace GoodsTracking.Domain
     public abstract class EntityBase
     {
         [Key]
-        public int Id { get; set; }
+        public long Id { get; set; }
 
         public DateTime Created { get; set; }
 
