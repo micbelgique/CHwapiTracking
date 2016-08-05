@@ -3,3 +3,8 @@ C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.DataAc
 C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\GoodsTracking.DataAccess.dll
 C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\GoodsTracking.DataAccess.pdb
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.DataAccess.dll
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.DataAccess.pdb
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\GoodsTracking.DataAccess.dll
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\GoodsTracking.DataAccess.pdb

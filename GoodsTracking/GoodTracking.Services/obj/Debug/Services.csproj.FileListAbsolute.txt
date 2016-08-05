@@ -3,3 +3,8 @@ C:\DEVCamp\GoodsTracking\GoodTracking.Services\bin\Debug\GoodTracking.Services.p
 C:\DEVCamp\GoodsTracking\GoodTracking.Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
 C:\DEVCamp\GoodsTracking\GoodTracking.Services\obj\Debug\GoodTracking.Services.dll
 C:\DEVCamp\GoodsTracking\GoodTracking.Services\obj\Debug\GoodTracking.Services.pdb
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodTracking.Services\bin\Debug\GoodTracking.Services.dll
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodTracking.Services\bin\Debug\GoodTracking.Services.pdb
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodTracking.Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodTracking.Services\obj\Debug\GoodTracking.Services.dll
+C:\MicSummerCamp\DevCamp2016-TeamOne\DevCamp2016-TeamOne\GoodsTracking\GoodTracking.Services\obj\Debug\GoodTracking.Services.pdb
