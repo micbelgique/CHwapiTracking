@@ -1,30 +1,29 @@
-﻿@{
+﻿@model GoodsTracking.Web.ViewModels.HomeViewModel
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-@using (Html.BeginForm("AddTracker", "Home", FormMethod.Post, new { @class = "form-signin" }))
+@using (Html.BeginForm("AddTracker", "Home", FormMethod.Post, new { @class = "form-signin" , @id = "addTrackerForm"}))
 {
     <div class="row">
         <div class="col-md-6">
-            <label for="InputContener">Contenant (obligatoire)</label>
+            @Html.LabelFor(m => m.ContainerIdentifier, "Contenant (obligatoire)");
         </div>
         <div class="col-md-6">
-            <input type="text" id="InputContener" class="form-control" required autofocus>
+            @Html.TextBoxFor(m => m.ContainerIdentifier, new { @required = "required", @autofocus = "autofocus" , @class = "form-control"})
         </div>
     </div>
-<br />
-        <div class="row">
-            <div class="col-md-6">
-                <label for="inputItem">Contenu (obligatoire)</label>
-            </div>
-            <div class="col-md-6">
-                <input type="text" id="inputItem" class="form-control" required width="9">
-                <button type="button" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add
-                </button>
-            </div>
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <label for="inputItem">Contenu (obligatoire)</label>
         </div>
+        <div class="col-md-6">
+            <div id="fields"></div>
+        </div>
+    </div>
         <br />
 
         <div class="row">
@@ -39,3 +38,38 @@
         <br />
         <button class="btn btn-lg btn-primary btn-block" type="submit">Stopper la traçabilité</button>
 }
+
+
+        <script type="text/javascript">
+
+
+
+            $(document).ready(function () {
+
+
+                var $fields = $('#fields');
+                addItem();
+
+                /*
+                 * Deactivate enter on form
+                 */
+                $("#addTrackerForm").keypress(function (event) {
+                    if (event.which == '13') {
+                        event.preventDefault();
+                    }
+                });
+
+
+                function addItem() {
+                    $(".item").off("keyup");
+                    $("<div class='form-group  has-feedback'><input type='text' class='item form-control' id='dynamicField' required width='9'><span class='glyphicon glyphicon-plus form-control-feedback'></span></div>").appendTo($fields);
+                    $(".item").keyup(function (e) {
+                        if (e.keyCode == 13) {
+                            addItem();
+                        }
+                    })
+                }
+
+            });
+
+        </script>
