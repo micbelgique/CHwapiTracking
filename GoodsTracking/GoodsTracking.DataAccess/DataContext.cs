@@ -1,4 +1,5 @@
-﻿using GoodsTracking.Domain;
+﻿using GoodsTracking.DataAccess.Initializers;
+using GoodsTracking.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -12,11 +13,19 @@ namespace GoodsTracking.DataAccess
     {
         public DataContext(string connectionString)
             :base (connectionString)
-        { }
+        {
+            Database.SetInitializer(new DevelopmentInitializer());
+        }
 
         public virtual void Commit()
         {
             base.SaveChanges();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
         }
 
         public DbSet<Area> Areas { get; set; }

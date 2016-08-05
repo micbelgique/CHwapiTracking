@@ -8,6 +8,8 @@ namespace GoodsTracking.Domain
 {
     public class Item : EntityBase
     {
+        public string Identifier { get; set; }
+
         public string Description { get; set; }
     }
 }

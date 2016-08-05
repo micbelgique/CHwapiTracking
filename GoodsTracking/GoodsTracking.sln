@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "GoodsTracking.DataAccess\DataAccess.csproj", "{A5F30F26-CA61-40E7-99EC-A3B02EEFB84B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "GoodTracking.Services\Services.csproj", "{D707DFF8-6A5C-41CA-B2E3-634138F37A6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "GoodsTracking.Services\Services.csproj", "{D707DFF8-6A5C-41CA-B2E3-634138F37A6D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "GoodsTracking.Domain\Domain.csproj", "{6361CBD2-B681-4C08-AAAE-1764C0552A48}"
 EndProject
