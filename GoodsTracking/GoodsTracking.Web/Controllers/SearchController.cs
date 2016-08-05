@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace GoodsTracking.Web.Controllers
 {
-    public class SearchController : Controller
+    public class SearchController : WebControllerBase
     {
         // GET: Search
         public ActionResult Index()
