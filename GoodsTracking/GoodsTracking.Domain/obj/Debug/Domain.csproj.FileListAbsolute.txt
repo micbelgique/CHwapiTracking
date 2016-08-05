@@ -1,4 +1,0 @@
-C:\DEVCamp\GoodsTracking\GoodsTracking.Domain\bin\Debug\GoodsTracking.Domain.dll
-C:\DEVCamp\GoodsTracking\GoodsTracking.Domain\bin\Debug\GoodsTracking.Domain.pdb
-C:\DEVCamp\GoodsTracking\GoodsTracking.Domain\obj\Debug\GoodsTracking.Domain.dll
-C:\DEVCamp\GoodsTracking\GoodsTracking.Domain\obj\Debug\GoodsTracking.Domain.pdb
