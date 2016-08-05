@@ -7,11 +7,12 @@ namespace GoodsTracking.DataAccess
     internal class UnitOfWork : IUnitOfWork
     {
         private DataContext _dataContext;
-        private bool _isDisposed;
+        private bool _isDisposed, _autoCommit;
 
-        internal UnitOfWork(string connectionString)
+        internal UnitOfWork(string connectionString, bool autoCommit)
         {
             _dataContext = new DataContext(connectionString);
+            _autoCommit = autoCommit;
         }
 
         ~UnitOfWork()
@@ -31,6 +32,10 @@ namespace GoodsTracking.DataAccess
         
         public void Dispose()
         {
+            if (_autoCommit)
+            {
+                Commit();
+            }
             Dispose(true);
             GC.SuppressFinalize(this);
         }

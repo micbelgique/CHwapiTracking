@@ -9,5 +9,6 @@ namespace GoodsTracking.Interfaces
     public interface IUnitOfWorkFactory
     {
         IUnitOfWork Create();
+        IUnitOfWork CreateAutoCommit();
     }
 }
