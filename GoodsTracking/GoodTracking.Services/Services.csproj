@@ -41,7 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GoodsTracking.DataAccess\DataAccess.csproj">
+      <Project>{a5f30f26-ca61-40e7-99ec-a3b02eefb84b}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodsTracking.Domain\Domain.csproj">
+      <Project>{6361cbd2-b681-4c08-aaae-1764c0552a48}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoodsTracking.Interfaces\Interfaces.csproj">
+      <Project>{ce0cac2c-0069-4fbd-a56a-79058b4ddae6}</Project>
+      <Name>Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

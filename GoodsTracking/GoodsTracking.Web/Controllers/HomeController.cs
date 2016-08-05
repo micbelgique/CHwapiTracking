@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoodTracking.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,9 @@ namespace GoodsTracking.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            var eventService = new EventService();
+            var test = eventService.GetAll();
+
             return View();
         }
     }
