@@ -1,7 +1,11 @@
-﻿namespace GoodsTracking.Domain
+﻿using System.Collections.Generic;
+
+namespace GoodsTracking.Domain
 {
     public class Area : EntityBase
     {
-        public string Name { get; set; }
+        public string Description { get; set; }
+
+        public IEnumerable<Tracker> Trackers { get; set; }
     }
 }

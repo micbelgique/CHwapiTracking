@@ -3,3 +3,12 @@ C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.DataAc
 C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\GoodsTracking.DataAccess.dll
 C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\obj\Debug\GoodsTracking.DataAccess.pdb
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.DataAccess.dll.config
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\EntityFramework.dll
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.Domain.dll
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.Domain.pdb
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\EntityFramework.xml
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.Interfaces.dll
+C:\DEVCamp\GoodsTracking\GoodsTracking.DataAccess\bin\Debug\GoodsTracking.Interfaces.pdb

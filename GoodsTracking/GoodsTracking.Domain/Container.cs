@@ -8,8 +8,8 @@ namespace GoodsTracking.Domain
 {
     public class Container : EntityBase
     {
-        public IEnumerable<Identifier> Identifiers { get; set; }
+        public string Description { get; set; }
 
-
+        public ContainerType Type { get; set; }
     }
 }
