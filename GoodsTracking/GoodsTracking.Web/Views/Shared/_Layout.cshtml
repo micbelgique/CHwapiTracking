@@ -11,6 +11,10 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
+    @{
+        string activeController = @ViewContext.RouteData.Values["controller"].ToString();
+    }
+
 <body>
     <div class="container">
         <div class="row">
@@ -31,11 +35,12 @@
                         <span class="icon-bar"></span>
                     </button>
                 </div>
+
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav">
-                        <li class="active">@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Home")</li>
+                        <li class=@(activeController == "Home" ? "active" : string.Empty)>@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Home")</li>
                         <li><a href="#stoppercontener">Stopper la traçabilité d'un colis</a></li>
-                        <li>@Html.ActionLink("Où se trouve mon colis?", "Index", "Search")</li>
+                        <li class=@(activeController == "Search" ? "active" : string.Empty)>@Html.ActionLink("Où se trouve mon colis?", "Index", "Search")</li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
