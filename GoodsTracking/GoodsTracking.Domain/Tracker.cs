@@ -8,6 +8,6 @@ namespace GoodsTracking.Domain
 {
     public class Tracker : EntityBase
     {
-        public Area Area { get; set; }
+        public TrackerType Type { get; set; }
     }
 }

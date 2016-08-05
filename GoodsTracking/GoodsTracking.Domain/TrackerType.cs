@@ -8,6 +8,8 @@ namespace GoodsTracking.Domain
 {
     public enum TrackerType
     {
-
+        In,
+        Out,
+        InOut
     }
 }
