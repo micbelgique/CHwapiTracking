@@ -1,1 +1,1 @@
-Server=tcp:v44rjabzwq.database.windows.net,1433;Initial Catalog=GoodsTracking;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+Server=tcp:v44rjabzwq.database.windows.net,1433;Initial Catalog=GoodsTracking;Persist Security Info=False;User ID=goodstracking;Password=goodstracking;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

@@ -1,6 +1,7 @@
 ﻿using GoodsTracking.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,9 +12,9 @@ namespace GoodsTracking.DataAccess
     {
         private string _connectionString;
 
-        public UnitOfWorkFactory(string connectionString)
+        public UnitOfWorkFactory(string connectionStringName)
         {
-            _connectionString = connectionString;
+            _connectionString = ConfigurationManager.ConnectionStrings[connectionStringName]?.ConnectionString;
         }
 
         public IUnitOfWork Create()
