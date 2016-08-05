@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "GoodsTracking.Dom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "GoodsTracking.Web\Web.csproj", "{1EA44FC0-C2A5-4C3D-96E3-F9C26F0DCD3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "GoodsTracking.Interfaces\Interfaces.csproj", "{CE0CAC2C-0069-4FBD-A56A-79058B4DDAE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1EA44FC0-C2A5-4C3D-96E3-F9C26F0DCD3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EA44FC0-C2A5-4C3D-96E3-F9C26F0DCD3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EA44FC0-C2A5-4C3D-96E3-F9C26F0DCD3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE0CAC2C-0069-4FBD-A56A-79058B4DDAE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE0CAC2C-0069-4FBD-A56A-79058B4DDAE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE0CAC2C-0069-4FBD-A56A-79058B4DDAE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE0CAC2C-0069-4FBD-A56A-79058B4DDAE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
