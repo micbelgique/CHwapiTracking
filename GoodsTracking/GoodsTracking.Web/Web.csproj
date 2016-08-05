@@ -193,7 +193,7 @@
       <Project>{ce0cac2c-0069-4fbd-a56a-79058b4ddae6}</Project>
       <Name>Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GoodTracking.Services\Services.csproj">
+    <ProjectReference Include="..\GoodsTracking.Services\Services.csproj">
       <Project>{d707dff8-6a5c-41ca-b2e3-634138f37a6d}</Project>
       <Name>Services</Name>
     </ProjectReference>

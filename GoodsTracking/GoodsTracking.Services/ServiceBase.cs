@@ -1,7 +1,7 @@
 ﻿using GoodsTracking.DataAccess;
 using GoodsTracking.Interfaces;
 
-namespace GoodTracking.Services
+namespace GoodsTracking.Services
 {
     public abstract class ServiceBase
     {

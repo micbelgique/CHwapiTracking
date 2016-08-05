@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,6 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Area.cs" />
+    <Compile Include="Constraints\LongLengthAttribute.cs" />
+    <Compile Include="Constraints\MediumLengthAttibute.cs" />
+    <Compile Include="Constraints\SmallLengthAttribute.cs" />
+    <Compile Include="Constraints\TextLengthAttribute.cs" />
+    <Compile Include="Constraints\TinyLengthAttribute.cs" />
     <Compile Include="Container.cs" />
     <Compile Include="ContainerType.cs" />
     <Compile Include="EntityBase.cs" />
