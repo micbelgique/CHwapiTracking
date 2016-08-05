@@ -122,7 +122,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\chwapi.css" />
     <Content Include="Content\Images\CHWaPi Logo.png" />
-    <Content Include="Content\Images\chwapi2.jpg" />
+    <Content Include="Content\Images\logo_chwapi.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
