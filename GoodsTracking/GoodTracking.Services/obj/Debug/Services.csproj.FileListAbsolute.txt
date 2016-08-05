@@ -1,0 +1,5 @@
+C:\DEVCamp\GoodsTracking\GoodTracking.Services\bin\Debug\GoodTracking.Services.dll
+C:\DEVCamp\GoodsTracking\GoodTracking.Services\bin\Debug\GoodTracking.Services.pdb
+C:\DEVCamp\GoodsTracking\GoodTracking.Services\obj\Debug\Services.csprojResolveAssemblyReference.cache
+C:\DEVCamp\GoodsTracking\GoodTracking.Services\obj\Debug\GoodTracking.Services.dll
+C:\DEVCamp\GoodsTracking\GoodTracking.Services\obj\Debug\GoodTracking.Services.pdb
