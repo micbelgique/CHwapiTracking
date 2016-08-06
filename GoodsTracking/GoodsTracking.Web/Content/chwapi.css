@@ -1,8 +1,23 @@
 h1 {
   text-shadow: -2px 2px 2px #777;
-  color: #E6E6E6;
+  color: #E6E6E6;    
 }
 
+.chwapitable thead {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 5px;
+    background-color: #87C2D9;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .row.vertical-align {
+        display: flex;
+        align-items: center;
+    }
+}
  /*.icon_add {
     width: 30px;
     height: 30px;
