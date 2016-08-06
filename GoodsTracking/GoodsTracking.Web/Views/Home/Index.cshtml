@@ -41,15 +41,15 @@
 
 @*@{
 
-    if (Model != null && !string.IsNullOrEmpty(Model.ContainerComments))
-    {
+        if (Model != null && !string.IsNullOrEmpty(Model.ContainerComments))
+        {
 
-        <div>
-            @Html.Label("test");
-        </div>
-    }
+            <div>
+                @Html.Label("test");
+            </div>
+        }
 
-}*@
+    }*@
 
 <script type="text/javascript">
 
@@ -74,22 +74,29 @@
 
         function addItem(autofocus) {
 
-            $(".item").off("keyup");
             var itemCount = $(".item").length;
+            if (itemCount > 0) {
+                var itemValue = $($(".item")[itemCount - 1]).val();
+                if (itemValue == null || itemValue == "") {
+                    return;
+                }
 
-            $("#fields").append($("<div class='form-group  has-feedback'>" + relationHtml.replace("{id}", itemCount) + "<span class='glyphicon glyphicon-plus form-control-feedback'></span></div>"));
+            }
+
+            $(".item").off("keyup");
+
+            $("#fields").append($("<div class='form-group  has-feedback'>" + relationHtml.replace("{id}", itemCount) + "<span id='icon_{id}' class='glyphicon glyphicon-plus form-control-feedback'></span></div>".replace("{id}", itemCount)));
 
             if (itemCount > 0)
                 $(".item")[itemCount].focus();
 
-
-            $(".item").keyup(function (e) {
+            $($(".item")[itemCount - 1]).siblings('span').hide()
+            $($(".item")[itemCount]).keyup(function (e) {
                 if (e.keyCode == 13) {
                     addItem(true);
                 }
             })
 
-            var itemCount = $(".item").length - 1;
 
         };
 
