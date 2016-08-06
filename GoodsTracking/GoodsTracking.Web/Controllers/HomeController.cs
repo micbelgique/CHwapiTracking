@@ -13,9 +13,6 @@ namespace GoodsTracking.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var eventService = new EventService();
-            var test = eventService.GetAll();
-
             return View();
         }
 

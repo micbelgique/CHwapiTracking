@@ -17,9 +17,14 @@ namespace GoodsTracking.DataAccess
             _connectionString = ConfigurationManager.ConnectionStrings[connectionStringName]?.ConnectionString;
         }
 
+        public IUnitOfWork CreateAutoCommit()
+        {
+            return new UnitOfWork(_connectionString, true);
+        }
+
         public IUnitOfWork Create()
         {
-            return new UnitOfWork(_connectionString);
-        }
+            return new UnitOfWork(_connectionString, false);
+        }        
     }
 }

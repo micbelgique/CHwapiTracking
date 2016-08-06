@@ -17,5 +17,10 @@ namespace GoodsTracking.Services
                 return unitOfWork.GetRepository<Event>().GetAll();
             }
         }
+
+        public void CreateEvent()
+        {
+
+        }
     }
 }

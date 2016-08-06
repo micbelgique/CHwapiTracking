@@ -185,10 +185,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GoodsTracking.Domain\Domain.csproj">
-      <Project>{6361cbd2-b681-4c08-aaae-1764c0552a48}</Project>
-      <Name>Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GoodsTracking.Interfaces\Interfaces.csproj">
       <Project>{ce0cac2c-0069-4fbd-a56a-79058b4ddae6}</Project>
       <Name>Interfaces</Name>

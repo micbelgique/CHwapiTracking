@@ -21,31 +21,31 @@ namespace GoodsTracking.DataAccess
             _dbSet = dataContext.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
-                                                Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-                                                params string[] includedProperties)
-        {
-            IQueryable<TEntity> query = _dbSet;
+        //public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+        //                                        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+        //                                        params string[] includedProperties)
+        //{
+        //    IQueryable<TEntity> query = _dbSet;
 
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
+        //    if (filter != null)
+        //    {
+        //        query = query.Where(filter);
+        //    }
 
-            foreach (var includeProperty in includedProperties)
-            {
-                query = query.Include(includeProperty);
-            }
+        //    foreach (var includeProperty in includedProperties)
+        //    {
+        //        query = query.Include(includeProperty);
+        //    }
 
-            if (orderBy != null)
-            {
-                return orderBy(query).ToList();
-            }
-            else
-            {
-                return query.ToList();
-            }
-        }
+        //    if (orderBy != null)
+        //    {
+        //        return orderBy(query).ToList();
+        //    }
+        //    else
+        //    {
+        //        return query.ToList();
+        //    }
+        //}
 
         public virtual TEntity GetById(int id)
         {
@@ -54,6 +54,7 @@ namespace GoodsTracking.DataAccess
 
         public virtual void Insert(TEntity entity)
         {
+            entity.Created = DateTime.Now;
             _dbSet.Add(entity);
         }
 
@@ -105,6 +106,11 @@ namespace GoodsTracking.DataAccess
         public bool Exists(int id)
         {
             return _dbSet.Any(e => e.Id == id);
+        }
+
+        public bool Any(Expression<Func<TEntity, bool>> where)
+        {
+            return _dbSet.Where(where).Any();
         }
     }
 }
