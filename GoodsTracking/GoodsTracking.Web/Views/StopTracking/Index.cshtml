@@ -1,10 +1,10 @@
-﻿@model GoodsTracking.Web.ViewModels.HomeViewModel
+﻿@model GoodsTracking.Web.ViewModels.StopTrackingViewModel
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("AddTracker", "Home", FormMethod.Post, new { @class = "form-signin", @id = "addTrackerForm" }))
+@using (Html.BeginForm("StopTracker", "StopTracking", FormMethod.Post, new { @class = "form-signin", @id = "stopTrackerForm" }))
 {
     <div class="row">
         <div class="col-md-6">
@@ -26,30 +26,9 @@
     </div>
     <br />
 
-    <div class="row">
-        <div class="col-md-6">
-            @Html.LabelFor(m => m.ContainerIdentifier, "Commentaires (facultatif)");
-        </div>
-        <div class="col-md-6">
-            @Html.TextBoxFor(m => m.ContainerComments, new { @class = "form-control" })
-        </div>
-    </div>
-
     <br />
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Activer la traçabilité</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Stopper la traçabilité</button>
 }
-
-@*@{
-
-        if (Model != null && !string.IsNullOrEmpty(Model.ContainerComments))
-        {
-
-            <div>
-                @Html.Label("test");
-            </div>
-        }
-
-    }*@
 
 <script type="text/javascript">
 
@@ -65,7 +44,7 @@
         /*
          * Deactivate enter on form
          */
-        $("#addTrackerForm").keypress(function (event) {
+        $("#stopTrackerForm").keypress(function (event) {
             if (event.which == '13') {
                 event.preventDefault();
             }

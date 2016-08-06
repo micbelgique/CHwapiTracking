@@ -39,7 +39,7 @@
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav">
                         <li class=@(activeController == "Home" ? "active" : string.Empty)>@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Home")</li>
-                        <li><a href="#stoppercontener">Stopper la traçabilité d'un colis</a></li>
+                        <li class=@(activeController == "StopTracking" ? "active" : string.Empty)>@Html.ActionLink("Stopper la traçabilité d'un colis", "Index", "StopTracking")</li>
                         <li class=@(activeController == "Search" ? "active" : string.Empty)>@Html.ActionLink("Où se trouve mon colis?", "Index", "Search")</li>
                     </ul>
                 </div><!--/.nav-collapse -->
