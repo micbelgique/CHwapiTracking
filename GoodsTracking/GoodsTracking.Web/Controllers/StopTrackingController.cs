@@ -21,19 +21,9 @@ namespace GoodsTracking.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool validationResult = true;
-                if (stopTrackingViewModel.ItemIdentifier == null || stopTrackingViewModel.ItemIdentifier.All(s => string.IsNullOrEmpty(s)))
-                {
-                    ModelState.AddModelError(nameof(stopTrackingViewModel.ItemIdentifier), new ValidationException("One item must be filled"));
-                    validationResult = false;
-
-                }
-
-                if (validationResult)
-                {
-                    ModelState.Clear();
-                    return View("~/Views/StopTracking/Index.cshtml");
-                }
+                ModelState.Clear();
+                PackageService.RemoveItems(stopTrackingViewModel.ContainerIdentifier,stopTrackingViewModel.ItemIdentifiers);
+                return View("~/Views/StopTracking/Index.cshtml");
             }
 
             return View("~/Views/StopTracking/Index.cshtml", stopTrackingViewModel);

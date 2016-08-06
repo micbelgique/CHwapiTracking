@@ -16,6 +16,19 @@ namespace GoodsTracking.Web.Controllers
             return View();
         }
 
-       
+        // Add tracker
+        public ActionResult AddTracker(ViewModels.HomeViewModel homeViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                PackageService.AddItems(homeViewModel.ContainerIdentifier,
+                                        homeViewModel.ItemIdentifiers,
+                                        homeViewModel.ContainerComments);
+                return View("~/Views/Active/Index.cshtml");
+            }
+
+            return View("~/Views/Active/Index.cshtml", homeViewModel);
+        }
+
     }
 }
