@@ -20,7 +20,7 @@ namespace GoodsTracking.Web.ViewModels
         {
             if (model.ItemIdentifiers == null || string.IsNullOrWhiteSpace(string.Join(string.Empty, model.ItemIdentifiers)))
             {
-                return new ValidationResult("At least one item identifier is required");
+                return new ValidationResult("At least one item identifier is required", new string[] { nameof(ItemIdentifiers) });
             }
             return ValidationResult.Success;
         }

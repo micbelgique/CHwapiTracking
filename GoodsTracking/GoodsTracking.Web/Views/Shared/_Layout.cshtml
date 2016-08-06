@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoodsTracking</title>
     @Styles.Render("~/content/css")
-
     <meta name="description" content="GoodsTracking" />
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
-    @{
-        string activeController = @ViewContext.RouteData.Values["controller"].ToString();
-    }
-
+@{
+    string activeController = @ViewContext.RouteData.Values["controller"].ToString();
+}
 <body>
     <div class="container-fluid">
         <div class="row vertical-align">
@@ -50,14 +45,9 @@
         <div class="container">
             @RenderBody()
         </div>
-        </div> <!-- /container -->
+    </div> <!-- /container -->
 </body>
-
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
-<link href="~/content/bootstrap.min.css" rel="stylesheet">
-
-<link href="~/content/chwapi.css" rel="stylesheet">
-
-
+@RenderSection("scripts", required: false)
 </html>
