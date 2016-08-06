@@ -15,8 +15,8 @@ namespace GoodsTracking.Domain
         [Required]
         public Container Container { get; set; }
 
-        [Required]
-        public Movement Movement { get; set; }
+        //[Required]
+        //public Movement Movement { get; set; }
 
         [Required]
         public Area Area { get; set; }

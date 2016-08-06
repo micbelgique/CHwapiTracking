@@ -21,19 +21,9 @@ namespace GoodsTracking.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool validationResult = true;
-                if (homeViewModel.ItemIdentifier == null || homeViewModel.ItemIdentifier.All(s => string.IsNullOrEmpty(s)))
-                {
-                    ModelState.AddModelError(nameof(homeViewModel.ItemIdentifier), new ValidationException("One item must be filled"));
-                    validationResult = false;
-
-                }
-
-                if (validationResult)
-                {
-                    ModelState.Clear();
-                    return View("~/Views/Home/Index.cshtml");
-                }
+                PackageService.AddItems(homeViewModel.ContainerIdentifier, 
+                                        homeViewModel.ItemIdentifiers, 
+                                        homeViewModel.ContainerComments);
             }
 
             return View("~/Views/Home/Index.cshtml", homeViewModel);

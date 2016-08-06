@@ -12,14 +12,22 @@ namespace GoodsTracking.DataAccess
     public class DataContext : DbContext
     {
         public DataContext(string connectionString)
-            :base (connectionString)
+            : base(connectionString)
         {
             Database.SetInitializer(new DevelopmentInitializer());
         }
 
         public virtual void Commit()
         {
-            base.SaveChanges();
+            try
+            {
+                base.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //logging
+                throw;
+            }
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
