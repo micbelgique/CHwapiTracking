@@ -18,9 +18,7 @@
         <button id="btnSearch" class="btn btn btn-primary btn-block" type="submit">Rechercher</button>
     </div>
 </div>
-
 <br />
-
 <table id="gvSearchResults" class="table table-striped chwapitable">
     <thead>
         <tr>
@@ -29,7 +27,32 @@
         </tr>
     </thead>
 </table>
+@section scripts {
+    <script src="~/Scripts/DataTables/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/DataTables/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var gvSearchResults;
+        $(document).ready(function () {
+            gvSearchResults = $("#gvSearchResults").DataTable({
+                dom: "lrtip",
+                responsive: {
+                    details: false
+                }
+            });
+        });
 
-<script type="text/javascript">
-
-</script>
+        $("#btnSearch").click(function () {
+            var containerIdentifier = $("#txtContainer").val().trim();
+            if (containerIdentifier) {
+                $.get('/api/goodstrackingapi/search?identifier=' + containerIdentifier,
+                    function(data, status) {
+                        gvSearchResults.clear();
+                        $("#gvSearchResults").DataTable({
+                            retrieve: true,
+                            data: data
+                        });
+                    });
+            }
+        });
+    </script>
+}
