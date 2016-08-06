@@ -2,47 +2,34 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 @*@using (Html.BeginForm("Research", "Home", FormMethod.Post, new { @class = "form-signin", @id = "ResearchForm" }))
     {*@
-<form class="form-research">
-    <div class="row">
-        <div class="col-md-4">
-            @*@Html.LabelFor(m => m.ContainerIdentifier, "Contenu");*@
-            <label for="InputContener">Contenu</label>
-        </div>
-        <div class="col-md-4">
-            @*@Html.TextBoxFor(m => m.ContainerIdentifier, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })*@
-            <input type="text" id="InputContener" class="form-control" required autofocus>
-        </div>
-        <div class="col-md-4">
-            <button class="btn btn btn-primary btn-block" type="submit">Rechercher</button>
-        </div>
-    </div>
 
-    @*}*@
-</form>
+<div class="row">
+    <div class="col-md-4">
+        @*@Html.LabelFor(m => m.ContainerIdentifier, "Contenu");*@
+        <label for="txtContainer">Contenu</label> :
+    </div>
+    <div class="col-md-4">
+        @*@Html.TextBoxFor(m => m.ContainerIdentifier, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })*@
+        <input type="text" id="txtContainer" class="form-control" required autofocus>
+    </div>
+    <div class="col-md-4">
+        <button id="btnSearch" class="btn btn btn-primary btn-block" type="submit">Rechercher</button>
+    </div>
+</div>
 
 <br />
 
-
-<table class="table table-striped chwapitable">
+<table id="gvSearchResults" class="table table-striped chwapitable">
     <thead>
         <tr>
             <th>Localisation</th>
             <th>Date - Heure</th>
         </tr>
     </thead>
-
-    <tbody>
-        <tr>
-            <td>Local Dépôt - Entrée</td>
-            <td>06/08/2016 - 10:01</td>
-        </tr>
-        <tr>
-            <td>Local Dépôt Union - Sortie</td>
-            <td>06/08/2016 - 10:02</td>
-        </tr>
-    </tbody>
 </table>
+
+<script type="text/javascript">
+
+</script>
