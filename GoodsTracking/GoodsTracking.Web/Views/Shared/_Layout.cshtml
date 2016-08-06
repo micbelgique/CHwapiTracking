@@ -34,11 +34,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">Accueil</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav">
-                        <li class=@(activeController == "Home" ? "active" : string.Empty)>@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Home")</li>
+                        <li class=@(activeController == "Active" ? "active" : string.Empty)>@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Active")</li>
                         <li class=@(activeController == "StopTracking" ? "active" : string.Empty)>@Html.ActionLink("Stopper la traçabilité d'un colis", "Index", "StopTracking")</li>
                         <li class=@(activeController == "Search" ? "active" : string.Empty)>@Html.ActionLink("Où se trouve mon colis?", "Index", "Search")</li>
                     </ul>
