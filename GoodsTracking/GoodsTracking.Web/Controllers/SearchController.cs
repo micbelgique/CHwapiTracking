@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoodsTracking.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,19 @@ namespace GoodsTracking.Web.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public dynamic Search(string identifier)
+        {
+            var eventService = new EventService();
+
+            var searchResults =  eventService.Search(identifier);
+
+            return new
+            {
+                data = searchResults.ToArray()
+            };
         }
     }
 }

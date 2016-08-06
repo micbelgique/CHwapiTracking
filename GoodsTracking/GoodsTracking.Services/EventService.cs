@@ -1,5 +1,6 @@
 ﻿using GoodsTracking.Domain;
 using GoodsTracking.Interfaces;
+using GoodsTracking.Services.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,17 +11,56 @@ namespace GoodsTracking.Services
 {
     public class EventService : ServiceBase
     {
-        public IEnumerable<Event> GetAll()
+        public IEnumerable<ItemEventSearchResult> Search(string itemIdentifier)
         {
             using (IUnitOfWork unitOfWork = UnitOfWorkFactory.Create())
             {
-                return unitOfWork.GetRepository<Event>().GetAll();
+                var container = unitOfWork.GetRepository<Package>()
+                                          .GetMany(p => p.Item.Identifier.Equals(itemIdentifier, StringComparison.InvariantCultureIgnoreCase)
+                                                     && p.Out == null)
+                                          .OrderByDescending(p => p.In)
+                                          .Select(p => p.Container)
+                                          .FirstOrDefault();
+
+                var searchResults = unitOfWork.GetRepository<Event>()
+                                       .GetMany(e => e.Container == container)
+                                       .Select(e => new ItemEventSearchResult
+                                       {
+                                           ItemIdentifier = itemIdentifier,
+                                           Location = e.Tracker.Area.Name,
+                                           Time = e.Time
+                                       });
+
+                return searchResults;
             }
         }
 
-        public void CreateEvent()
+        public void CreateEvent(int gateId, string containerIdentifier)
         {
+            using (IUnitOfWork unitOfWork = UnitOfWorkFactory.CreateAutoCommit())
+            {
+                var containerRepository = unitOfWork.GetRepository<Container>();
+                var trackerRepository = unitOfWork.GetRepository<Tracker>();
+                var eventRepository = unitOfWork.GetRepository<Event>();
+                Tracker tracker = trackerRepository.GetById(gateId);
 
+                if (tracker != null)
+                {
+                    Container container = containerRepository.Get(i => i.Identifier.Equals(containerIdentifier, StringComparison.InvariantCultureIgnoreCase));
+
+                    if (container != null)
+                    {
+                        Event currentEvent = new Event();
+                        currentEvent.Container = container;
+                        currentEvent.Time = DateTime.Now;
+                        currentEvent.Tracker = tracker;
+
+                        eventRepository.Insert(currentEvent);
+                    }
+                }
+
+
+            }
         }
     }
 }

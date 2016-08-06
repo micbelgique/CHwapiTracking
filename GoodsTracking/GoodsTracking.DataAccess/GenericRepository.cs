@@ -21,31 +21,31 @@ namespace GoodsTracking.DataAccess
             _dbSet = dataContext.Set<TEntity>();
         }
 
-        //public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
-        //                                        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
-        //                                        params string[] includedProperties)
-        //{
-        //    IQueryable<TEntity> query = _dbSet;
+        public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+                                                Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+                                                params string[] includedProperties)
+        {
+            IQueryable<TEntity> query = _dbSet;
 
-        //    if (filter != null)
-        //    {
-        //        query = query.Where(filter);
-        //    }
+            if (filter != null)
+            {
+                query = query.Where(filter);
+            }
 
-        //    foreach (var includeProperty in includedProperties)
-        //    {
-        //        query = query.Include(includeProperty);
-        //    }
+            foreach (var includeProperty in includedProperties)
+            {
+                query = query.Include(includeProperty);
+            }
 
-        //    if (orderBy != null)
-        //    {
-        //        return orderBy(query).ToList();
-        //    }
-        //    else
-        //    {
-        //        return query.ToList();
-        //    }
-        //}
+            if (orderBy != null)
+            {
+                return orderBy(query).ToList();
+            }
+            else
+            {
+                return query.ToList();
+            }
+        }
 
         public virtual TEntity GetById(int id)
         {
