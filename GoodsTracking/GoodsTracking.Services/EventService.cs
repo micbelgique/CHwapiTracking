@@ -18,9 +18,32 @@ namespace GoodsTracking.Services
             }
         }
 
-        public void CreateEvent()
+        public void CreateEvent(int gateId, string containerIdentifier)
         {
+            using (IUnitOfWork unitOfWork = UnitOfWorkFactory.CreateAutoCommit())
+            {
+                var containerRepository = unitOfWork.GetRepository<Container>();
+                var trackerRepository = unitOfWork.GetRepository<Tracker>();
+                var eventRepository = unitOfWork.GetRepository<Event>();
+                Tracker tracker = trackerRepository.GetById(gateId);
 
+                if (tracker != null)
+                {
+                    Container container = containerRepository.Get(i => i.Identifier.Equals(containerIdentifier, StringComparison.InvariantCultureIgnoreCase));
+
+                    if (container != null)
+                    {
+                        Event currentEvent = new Event();
+                        currentEvent.Container = container;
+                        currentEvent.Time = DateTime.Now;
+                        currentEvent.Tracker = tracker;
+
+                        eventRepository.Insert(currentEvent);
+                    }
+                }
+
+
+            }
         }
     }
 }
