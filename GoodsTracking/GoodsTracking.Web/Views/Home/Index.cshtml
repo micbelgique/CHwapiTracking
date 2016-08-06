@@ -1,9 +1,7 @@
 ﻿@model GoodsTracking.Web.ViewModels.HomeViewModel
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @using (Html.BeginForm("AddTracker", "Home", FormMethod.Post, new { @class = "form-signin", @id = "addTrackerForm" }))
 {
     <div class="row">
@@ -20,7 +18,7 @@
             <label for="inputItem">Contenu (obligatoire)</label>
         </div>
         <div class="col-md-6">
-            @Html.ValidationMessageFor(m => m.ItemIdentifier)
+            @Html.ValidationMessageFor(m => m.ItemIdentifiers)
             <div id="fields"></div>
         </div>
     </div>
@@ -38,7 +36,6 @@
     <br />
     <button class="btn btn-lg btn-primary btn-block" type="submit">Activer la traçabilité</button>
 }
-
 @*@{
 
         if (Model != null && !string.IsNullOrEmpty(Model.ContainerComments))
@@ -50,18 +47,11 @@
         }
 
     }*@
-
 <script type="text/javascript">
-
-
-
     $(document).ready(function () {
-
-        var relationHtml = '@Html.TextBox("ItemIdentifier[{id}]",null,new { @class= "item form-control" })';
-
+        var relationHtml = '@Html.TextBox("ItemIdentifiers[{id}]",null,new { @class= "item form-control" })';
         var $fields = $('#fields');
         addItem(false);
-
         /*
          * Deactivate enter on form
          */
@@ -71,16 +61,13 @@
             }
         });
 
-
         function addItem(autofocus) {
-
             var itemCount = $(".item").length;
             if (itemCount > 0) {
                 var itemValue = $($(".item")[itemCount - 1]).val();
                 if (itemValue == null || itemValue == "") {
                     return;
                 }
-
             }
 
             $(".item").off("keyup");
@@ -96,10 +83,6 @@
                     addItem(true);
                 }
             })
-
-
         };
-
     });
-
 </script>

@@ -35,14 +35,42 @@ namespace GoodsTracking.Services
         //    }
         //}
 
-        public bool AddItem(string containerIdentifier, string itemIdentifier, string comment)
+        public bool AddItems(string containerIdentifier, string[] itemIdentifiers, string comment)
         {
             using (var unitOfWork = UnitOfWorkFactory.CreateAutoCommit())
             {
-                var container = unitOfWork.GetRepository<Container>().Get(c => c.Identifier == containerIdentifier);
-                var item = unitOfWork.GetRepository<Item>().Get(i => i.Identifier == itemIdentifier);
-                if (container != null && item != null)
+                var containerRepository = unitOfWork.GetRepository<Container>();
+                var itemRepository = unitOfWork.GetRepository<Item>();
+
+                if (!containerRepository.Any(c=>c.Identifier == containerIdentifier))
                 {
+                    containerRepository.Insert(new Container
+                    {
+                        Identifier = containerIdentifier,
+                        Type = ContainerType.Normal
+                    });
+                }
+                foreach (string itemIdentifier in itemIdentifiers)
+                {
+                    if (!itemRepository.Any(i=>i.Identifier == itemIdentifier))
+                    {
+                        itemRepository.Insert(new Item
+                        {
+                            Identifier = itemIdentifier
+                        });
+                    }
+                }
+            }
+
+            using (var unitOfWork = UnitOfWorkFactory.CreateAutoCommit())
+            {
+                var containerRepository = unitOfWork.GetRepository<Container>();
+                var itemRepository = unitOfWork.GetRepository<Item>();
+
+                var container = containerRepository.Get(c => c.Identifier == containerIdentifier);
+                foreach (string itemIdentifier in itemIdentifiers)
+                {
+                    var item = itemRepository.Get(i => i.Identifier == itemIdentifier);
                     unitOfWork.GetRepository<Package>().Insert(new Package
                     {
                         Comment = comment,
