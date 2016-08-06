@@ -48,16 +48,10 @@
 
     }*@
 <script type="text/javascript">
-
-
-
     $(document).ready(function () {
-
         var relationHtml = '@Html.TextBox("ItemIdentifiers[{id}]",null,new { @class= "item form-control" })';
-
         var $fields = $('#fields');
         addItem(false);
-
         /*
          * Deactivate enter on form
          */
@@ -67,16 +61,13 @@
             }
         });
 
-
         function addItem(autofocus) {
-
             var itemCount = $(".item").length;
             if (itemCount > 0) {
                 var itemValue = $($(".item")[itemCount - 1]).val();
                 if (itemValue == null || itemValue == "") {
                     return;
                 }
-
             }
 
             $(".item").off("keyup");
@@ -92,10 +83,6 @@
                     addItem(true);
                 }
             })
-
-
         };
-
     });
-
 </script>

@@ -11,7 +11,15 @@ namespace GoodsTracking.DataAccess.Initializers
     {
         protected override void Seed(DataContext context)
         {
-            base.Seed(context);
+            
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }
