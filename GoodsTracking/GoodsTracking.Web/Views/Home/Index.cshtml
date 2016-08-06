@@ -4,15 +4,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@using (Html.BeginForm("AddTracker", "Home", FormMethod.Post, new { @class = "form-signin" , @id = "addTrackerForm"}))
+@using (Html.BeginForm("AddTracker", "Home", FormMethod.Post, new { @class = "form-signin", @id = "addTrackerForm" }))
 {
     <div class="row">
         <div class="col-md-6">
             @Html.LabelFor(m => m.ContainerIdentifier, "Contenant (obligatoire)");
         </div>
         <div class="col-md-6">
-            @Html.TextBoxFor(m => m.ContainerIdentifier, new { @required = "required", @autofocus = "autofocus" , @class = "form-control"})
+            @Html.TextBoxFor(m => m.ContainerIdentifier, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
         </div>
     </div>
     <br />
@@ -21,55 +20,79 @@
             <label for="inputItem">Contenu (obligatoire)</label>
         </div>
         <div class="col-md-6">
+            @Html.ValidationMessageFor(m => m.ItemIdentifier)
             <div id="fields"></div>
         </div>
     </div>
-        <br />
+    <br />
 
-        <div class="row">
-            <div class="col-md-6">
-                <label for="inputComment">Commentaires (facultatif)</label>
-            </div>
-            <div class="col-md-6">
-                <input type="text" id="inputComment" class="form-control" required>
-            </div>
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(m => m.ContainerIdentifier, "Commentaires (facultatif)");
         </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.ContainerComments, new { @class = "form-control" })
+        </div>
+    </div>
 
-        <br />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Stopper la traçabilité</button>
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Stopper la traçabilité</button>
 }
 
+@*@{
 
-        <script type="text/javascript">
+    if (Model != null && !string.IsNullOrEmpty(Model.ContainerComments))
+    {
 
+        <div>
+            @Html.Label("test");
+        </div>
+    }
 
+}*@
 
-            $(document).ready(function () {
-
-
-                var $fields = $('#fields');
-                addItem();
-
-                /*
-                 * Deactivate enter on form
-                 */
-                $("#addTrackerForm").keypress(function (event) {
-                    if (event.which == '13') {
-                        event.preventDefault();
-                    }
-                });
+<script type="text/javascript">
 
 
-                function addItem() {
-                    $(".item").off("keyup");
-                    $("<div class='form-group  has-feedback'><input type='text' class='item form-control' id='dynamicField' required width='9'><span class='glyphicon glyphicon-plus form-control-feedback'></span></div>").appendTo($fields);
-                    $(".item").keyup(function (e) {
-                        if (e.keyCode == 13) {
-                            addItem();
-                        }
-                    })
+
+    $(document).ready(function () {
+
+        var relationHtml = '@Html.TextBox("ItemIdentifier[{id}]",null,new { @class= "item form-control" })';
+
+        var $fields = $('#fields');
+        addItem(false);
+
+        /*
+         * Deactivate enter on form
+         */
+        $("#addTrackerForm").keypress(function (event) {
+            if (event.which == '13') {
+                event.preventDefault();
+            }
+        });
+
+
+        function addItem(autofocus) {
+
+            $(".item").off("keyup");
+            var itemCount = $(".item").length;
+
+            $("#fields").append($("<div class='form-group  has-feedback'>" + relationHtml.replace("{id}", itemCount) + "<span class='glyphicon glyphicon-plus form-control-feedback'></span></div>"));
+
+            if (itemCount > 0)
+                $(".item")[itemCount].focus();
+
+
+            $(".item").keyup(function (e) {
+                if (e.keyCode == 13) {
+                    addItem(true);
                 }
+            })
 
-            });
+            var itemCount = $(".item").length - 1;
 
-        </script>
+        };
+
+    });
+
+</script>
