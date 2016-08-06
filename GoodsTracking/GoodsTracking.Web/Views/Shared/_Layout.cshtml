@@ -16,8 +16,8 @@
     }
 
 <body>
-    <div class="container">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row vertical-align">
             <div class="col-md-4">
                 <Img src="~/Content/Images/logo_chwapi.png" class="img-responsive" alt="LOGO">
             </div>
@@ -46,8 +46,10 @@
             </div>
         </nav>
 
-        @RenderBody()
-    </div> <!-- /container -->
+        <div class="container">
+            @RenderBody()
+        </div>
+        </div> <!-- /container -->
 </body>
 
 @Scripts.Render("~/bundles/jquery")
