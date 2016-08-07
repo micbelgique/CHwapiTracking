@@ -9,15 +9,17 @@ namespace GoodsTracking.Services
 {
     public class DashboardService
     {
-        //public DashboardData GetDashboardData()
-        //{
-        //    //new DashboardData
-        //    //{
-        //    //     MovementsByItemType = new Dictionary<string, int>
-        //    //     {
-        //    //         [""] = new Random().Next()
-        //    //     }
-        //    //}
-        //}
+        public DashboardData GetDashboardData()
+        {
+            return new DashboardData
+            {
+                MovementsByItemType = new Dictionary<string, int>
+                {
+                    ["Tube sanguin"] = new Random().Next(1000),
+                    ["Document confidentiel"] = new Random().Next(1000),
+                    ["Vaccin"] = new Random().Next(1000)
+                }
+            };
+        }
     }
 }
