@@ -379,7 +379,7 @@
     <Compile Include="Controllers\ActiveController.cs" />
     <Compile Include="Controllers\ApiControllerBase.cs" />
     <Compile Include="Controllers\GoodsTrackingApiController.cs" />
-    <Compile Include="Controllers\StopTrackingControllery.cs" />
+    <Compile Include="Controllers\StopTrackingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\WebControllerBase.cs" />
