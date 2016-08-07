@@ -21,6 +21,7 @@ namespace GoodsTracking.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                ModelState.Clear();
                 PackageService.AddItems(homeViewModel.ContainerIdentifier,
                                         homeViewModel.ItemIdentifiers,
                                         homeViewModel.ContainerComments);
