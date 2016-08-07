@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace GoodsTracking.Web.ViewModels
 {
-    public class TrackerViewModel
+    public class TrackerViewModel : ViewModelBase
     {
         [Required]
         public int? Id { get; set; }

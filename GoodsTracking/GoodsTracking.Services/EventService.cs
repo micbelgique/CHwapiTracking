@@ -21,18 +21,21 @@ namespace GoodsTracking.Services
                                           .OrderByDescending(p => p.In)
                                           .Select(p => p.Container)
                                           .FirstOrDefault();
+                if (container != null)
+                {
+                    var searchResults = unitOfWork.GetRepository<Event>()
+                                           .GetMany(e => e.Container.Identifier == container.Identifier, null, "Tracker", "Tracker.Area")
+                                           .Select(e => new ItemEventSearchResult
+                                           {
+                                               ItemIdentifier = itemIdentifier,
+                                               Location = e.Tracker.Area.Name,
+                                               Time = e.Time
+                                           });
 
-                var searchResults = unitOfWork.GetRepository<Event>()
-                                       .GetMany(e => e.Container.Identifier == container.Identifier, null, "Tracker", "Tracker.Area")
-                                       .Select(e => new ItemEventSearchResult
-                                       {
-                                           ItemIdentifier = itemIdentifier,
-                                           Location = e.Tracker.Area.Name,
-                                           Time = e.Time
-                                       });
-
-                return searchResults;
+                    return searchResults;
+                }
             }
+            return null;
         }
 
         public void CreateEvent(int gateId, string containerIdentifier)

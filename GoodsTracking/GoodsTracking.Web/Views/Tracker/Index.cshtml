@@ -6,7 +6,7 @@
 {
     <div class="row">
         <div class="col-md-6">
-            @Html.LabelFor(model => model.Id, "Contenant (obligatoire)");
+            @Html.LabelFor(model => model.Id, "Identifiant (obligatoire)");
         </div>
         <div class="col-md-6">
             @Html.TextBoxFor(m => m.Id, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })

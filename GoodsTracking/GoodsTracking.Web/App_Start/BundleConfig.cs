@@ -16,6 +16,7 @@ namespace GoodsTracking.Web.App_Start
             // JQuery
             bundles.Add(new ScriptBundle("~/bundles/jquery")
                 .Include("~/Scripts/jquery-{version}.js")
+                .Include("~/Scripts/toast/jquery.toaster.js")
                 //.Include("~/Scripts/jquery.unobtrusive-ajax.min.js")
                 //.Include("~/Scripts/jquery.validate.min.js")
                 //.Include("~/Scripts/jquery.validate.unobtrusive.min.js")

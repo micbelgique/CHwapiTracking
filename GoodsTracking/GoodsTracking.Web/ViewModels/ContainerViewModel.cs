@@ -6,7 +6,7 @@ using System.Web;
 
 namespace GoodsTracking.Web.ViewModels
 {
-    public class ContainerViewModel
+    public class ContainerViewModel : ViewModelBase
     {
         [Required]
         public string Identifier { get; set; }

@@ -17,18 +17,20 @@ namespace GoodsTracking.Web.Controllers
         }
 
         // Add tracker
-        public ActionResult AddTracker(ViewModels.HomeViewModel homeViewModel)
+        public ActionResult AddTracker(ViewModels.HomeViewModel model)
         {
             if (ModelState.IsValid)
             {
                 ModelState.Clear();
-                PackageService.AddItems(homeViewModel.ContainerIdentifier,
-                                        homeViewModel.ItemIdentifiers.Where(i => !string.IsNullOrWhiteSpace(i)).ToArray(),
-                                        homeViewModel.ContainerComments);
-                return View("~/Views/Active/Index.cshtml");
+                PackageService.AddItems(model.ContainerIdentifier,
+                                        model.ItemIdentifiers.Where(i => !string.IsNullOrWhiteSpace(i)).ToArray(),
+                                        model.ContainerComments);
+                model = new ViewModels.HomeViewModel();
+                model.Notify("Les objets ont été ajoutés avec succès");
+                return View("~/Views/Active/Index.cshtml", model);
             }
 
-            return View("~/Views/Active/Index.cshtml", homeViewModel);
+            return View("~/Views/Active/Index.cshtml", model);
         }
 
     }
