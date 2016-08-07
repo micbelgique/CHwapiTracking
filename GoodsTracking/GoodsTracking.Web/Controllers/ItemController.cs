@@ -23,7 +23,9 @@ namespace GoodsTracking.Web.Controllers
             {
                 ModelState.Clear();
                 ItemService.CreateItem(model.Identifier,model.Description);
-                return View("~/Views/Item/Index.cshtml");
+                model = new ItemViewModel();
+                model.Notify("L'objet a été créé avec succès");
+                return View("~/Views/Item/Index.cshtml", model);
             }
 
             return View("~/Views/Item/Index.cshtml", model);

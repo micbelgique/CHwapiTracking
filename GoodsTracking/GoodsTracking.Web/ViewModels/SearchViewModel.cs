@@ -7,7 +7,7 @@ using System.Web;
 
 namespace GoodsTracking.Web.ViewModels
 {
-    public class SearchViewModel
+    public class SearchViewModel : ViewModelBase
     {
         [Required(ErrorMessage = "Veuillez entrer un identifiant de contenu")]
         public string ContainerIdentifier { get; set; }

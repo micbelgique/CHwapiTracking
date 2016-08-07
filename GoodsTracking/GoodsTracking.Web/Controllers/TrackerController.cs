@@ -12,19 +12,7 @@ namespace GoodsTracking.Web.Controllers
         // GET: Tracker
         public ActionResult Index()
         {
-            TrackerViewModel model = new TrackerViewModel();
-
-            List<SelectListItem> areas = AreaService.GetAreas().Select(a =>
-            {
-                return new SelectListItem { Text = a.Name, Value = a.Id.ToString() };
-
-            }).ToList();
-
-
-            model.Areas = new SelectList(areas, nameof(SelectListItem.Value), nameof(SelectListItem.Text));
-
-
-            return View("~/Views/Tracker/Index.cshtml", model);
+            return View("~/Views/Tracker/Index.cshtml", BuildTrackerViewModel());
         }
 
 
@@ -37,10 +25,24 @@ namespace GoodsTracking.Web.Controllers
                 TrackerService.AddItem(model.Id.Value,
                                         model.TrackerType,
                                         model.AreaId);
-                return Index();
+                model = BuildTrackerViewModel();
+                model.Notify("Le portique a été ajouté avec succès");
             }
 
             return View("~/Views/Tracker/Index.cshtml", model);
+        }
+
+        private TrackerViewModel BuildTrackerViewModel()
+        {
+            TrackerViewModel model = new TrackerViewModel();
+            List<SelectListItem> areas = AreaService.GetAreas().Select(a =>
+            {
+                return new SelectListItem { Text = a.Name, Value = a.Id.ToString() };
+
+            }).ToList();
+            model.Areas = new SelectList(areas, nameof(SelectListItem.Value), nameof(SelectListItem.Text));
+
+            return model;
         }
     }
 }

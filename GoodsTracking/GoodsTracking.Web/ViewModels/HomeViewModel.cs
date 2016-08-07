@@ -7,7 +7,7 @@ using System.Web;
 namespace GoodsTracking.Web.ViewModels
 {
     [CustomValidation(typeof(HomeViewModel), nameof(ValidateItemIdentifiers))]
-    public class HomeViewModel
+    public class HomeViewModel : ViewModelBase
     {
         [Required]
         public string ContainerIdentifier { get; set; }

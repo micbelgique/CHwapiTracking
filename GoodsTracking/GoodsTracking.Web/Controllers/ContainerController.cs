@@ -23,7 +23,9 @@ namespace GoodsTracking.Web.Controllers
             {
                 ModelState.Clear();
                 ContainerService.AddItem(model.Identifier,model.Description);
-                return View("~/Views/Container/Index.cshtml");
+                model = new ContainerViewModel();
+                model.Notify("Le contenant a été ajouté avec succès");
+                return View("~/Views/Container/Index.cshtml", model);
             }
 
             return View("~/Views/Container/Index.cshtml", model);

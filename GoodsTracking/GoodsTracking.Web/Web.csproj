@@ -288,6 +288,7 @@
     <Content Include="Content\Map\js\list.min.js" />
     <Content Include="Content\Map\js\main.js" />
     <Content Include="Content\Map\js\modernizr-custom.js" />
+    <Content Include="Scripts\toast\jquery.toaster.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -419,6 +420,7 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\ContainerViewModel.cs" />
     <Compile Include="ViewModels\TrackerViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
