@@ -406,6 +406,7 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\StopTracking\Index.cshtml" />
     <Content Include="Views\Active\Index.cshtml" />
+    <Content Include="Views\Tracker\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -416,7 +417,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_Start\" />
-    <Folder Include="Views\Tracker\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GoodsTracking.Interfaces\Interfaces.csproj">

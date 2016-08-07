@@ -1,0 +1,37 @@
+﻿@model GoodsTracking.Web.ViewModels.TrackerViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AddTracker", "Tracker", FormMethod.Post, new { @class = "form-signin", @id = "addTrackerForm" }))
+{
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Id, "Contenant (obligatoire)");
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Id, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(m => m.TrackerTypes, "Type de portique (obligatoire)");
+        </div>
+        <div class="col-md-6">
+            @Html.DropDownListFor(m => m.TrackerType, Model.TrackerTypes, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(m => m.Areas, "Area (obligatoire)");
+        </div>
+        <div class="col-md-6">
+            @Html.DropDownListFor(m => m.AreaId, Model.Areas, new { @class = "form-control" })
+        </div>
+    </div>
+    <br />
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ajouter le portique</button>
+}

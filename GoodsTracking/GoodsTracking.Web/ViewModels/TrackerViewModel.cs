@@ -10,7 +10,7 @@ namespace GoodsTracking.Web.ViewModels
     public class TrackerViewModel
     {
         [Required]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public SelectList TrackerTypes
         {
@@ -23,7 +23,7 @@ namespace GoodsTracking.Web.ViewModels
                     new SelectListItem { Text = "Entrée / Sortie", Value = "2" }
                 };
 
-                return new SelectList(items);
+                return new SelectList(items, nameof(SelectListItem.Value), nameof(SelectListItem.Text));
             }
         }
 
