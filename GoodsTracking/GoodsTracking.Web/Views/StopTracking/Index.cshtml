@@ -1,9 +1,7 @@
 ﻿@model GoodsTracking.Web.ViewModels.StopTrackingViewModel
-
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 @using (Html.BeginForm("StopTracker", "StopTracking", FormMethod.Post, new { @class = "form-signin", @id = "stopTrackerForm" }))
 {
     <div class="row">
@@ -24,63 +22,64 @@
             <div id="fields"></div>
         </div>
     </div>
-    <br />
-
-    <br />
-    <button class="btn btn btn-primary btn-block" type="submit">Stopper la traçabilité</button>
+    <div class="row rowSpacer">
+        <div class="col-md-4 col-md-offset-6">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Stopper la traçabilité</button>
+        </div>
+    </div>
 }
 @section scripts
 {
-<script type="text/javascript">
+    <script type="text/javascript">
 
 
 
-    $(document).ready(function () {
+        $(document).ready(function () {
 
-        var relationHtml = '@Html.TextBox("ItemIdentifiers[{id}]",null,new { @class= "item form-control" })';
+            var relationHtml = '@Html.TextBox("ItemIdentifiers[{id}]",null,new { @class= "item form-control" })';
 
-        var $fields = $('#fields');
-        addItem(false);
+            var $fields = $('#fields');
+            addItem(false);
 
-        /*
-         * Deactivate enter on form
-         */
-        $("#stopTrackerForm").keypress(function (event) {
-            if (event.which == '13') {
-                event.preventDefault();
-            }
+            /*
+             * Deactivate enter on form
+             */
+            $("#stopTrackerForm").keypress(function (event) {
+                if (event.which == '13') {
+                    event.preventDefault();
+                }
+            });
+
+
+            function addItem(autofocus) {
+
+                var itemCount = $(".item").length;
+                if (itemCount > 0) {
+                    var itemValue = $($(".item")[itemCount - 1]).val();
+                    if (itemValue == null || itemValue == "") {
+                        return;
+                    }
+
+                }
+
+                $(".item").off("keyup");
+
+                $("#fields").append($("<div class='form-group  has-feedback'>" + relationHtml.replace("{id}", itemCount) + "<span id='icon_{id}' class='glyphicon glyphicon-plus form-control-feedback'></span></div>".replace("{id}", itemCount)));
+
+                if (itemCount > 0)
+                    $(".item")[itemCount].focus();
+
+                $($(".item")[itemCount - 1]).siblings('span').hide()
+                $($(".item")[itemCount]).keyup(function (e) {
+                    if (e.keyCode == 13) {
+                        addItem(true);
+                    }
+                })
+
+
+            };
+
         });
 
-
-        function addItem(autofocus) {
-
-            var itemCount = $(".item").length;
-            if (itemCount > 0) {
-                var itemValue = $($(".item")[itemCount - 1]).val();
-                if (itemValue == null || itemValue == "") {
-                    return;
-                }
-
-            }
-
-            $(".item").off("keyup");
-
-            $("#fields").append($("<div class='form-group  has-feedback'>" + relationHtml.replace("{id}", itemCount) + "<span id='icon_{id}' class='glyphicon glyphicon-plus form-control-feedback'></span></div>".replace("{id}", itemCount)));
-
-            if (itemCount > 0)
-                $(".item")[itemCount].focus();
-
-            $($(".item")[itemCount - 1]).siblings('span').hide()
-            $($(".item")[itemCount]).keyup(function (e) {
-                if (e.keyCode == 13) {
-                    addItem(true);
-                }
-            })
-
-
-        };
-
-    });
-
-</script>
+    </script>
 }
