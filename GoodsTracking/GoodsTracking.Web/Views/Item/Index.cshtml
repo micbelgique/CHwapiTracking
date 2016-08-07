@@ -1,0 +1,29 @@
+﻿@model GoodsTracking.Web.ViewModels.ItemViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("AddItem", "Item", FormMethod.Post, new { @class = "form-signin", @id = "addTrackerForm" }))
+{
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Identifier, "Identifiant (obligatoire)");
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Identifier, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-6">
+            @Html.LabelFor(model => model.Description, "Description (obligatoire)");
+        </div>
+        <div class="col-md-6">
+            @Html.TextBoxFor(m => m.Description, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
+        </div>
+    </div>
+
+    <br />
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Ajouter le contenu</button>
+}

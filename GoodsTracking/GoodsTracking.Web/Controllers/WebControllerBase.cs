@@ -13,5 +13,6 @@ namespace GoodsTracking.Web.Controllers
         protected TrackerService TrackerService => new TrackerService();
         protected AreaService AreaService => new AreaService();
         protected ContainerService ContainerService => new ContainerService();
+        protected ItemService ItemService => new ItemService();
     }
 }

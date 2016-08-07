@@ -36,6 +36,7 @@
                     <ul class="nav navbar-nav">
                         <li class=@(activeController == "Tracker" ? "active" : string.Empty)>@Html.ActionLink("Ajouter un portique", "Index", "Tracker")</li>
                         <li class=@(activeController == "Container" ? "active" : string.Empty)>@Html.ActionLink("Ajouter un contenant", "Index", "Container")</li>
+                        <li class=@(activeController == "Item" ? "active" : string.Empty)>@Html.ActionLink("Ajouter un item", "Index", "Item")</li>
                         <li class=@(activeController == "Active" ? "active" : string.Empty)>@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Active")</li>
                         <li class=@(activeController == "StopTracking" ? "active" : string.Empty)>@Html.ActionLink("Stopper la traçabilité d'un colis", "Index", "StopTracking")</li>
                         <li class=@(activeController == "Search" ? "active" : string.Empty)>@Html.ActionLink("Où se trouve mon colis?", "Index", "Search")</li>

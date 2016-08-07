@@ -378,6 +378,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ActiveController.cs" />
     <Compile Include="Controllers\ApiControllerBase.cs" />
+    <Compile Include="Controllers\ItemController.cs" />
     <Compile Include="Controllers\GoodsTrackingApiController.cs" />
     <Compile Include="Controllers\StopTrackingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -391,6 +392,7 @@
     <Compile Include="Payload\CheckPointData.cs" />
     <Compile Include="Payload\ContainerMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\StopTrackingViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
@@ -410,6 +412,7 @@
     <Content Include="Views\Active\Index.cshtml" />
     <Content Include="Views\Tracker\Index.cshtml" />
     <Content Include="Views\Container\Index.cshtml" />
+    <Content Include="Views\Item\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
