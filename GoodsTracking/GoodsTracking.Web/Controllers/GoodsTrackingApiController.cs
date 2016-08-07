@@ -19,21 +19,5 @@ namespace GoodsTracking.Web.Controllers
 
             return Ok(checkPointData);
         }
-
-        [HttpGet]
-        public IHttpActionResult Search(string identifier)
-        {
-            var eventService = new EventService();
-
-            var searchResults = eventService.Search(identifier);
-
-            searchResults = new List<ItemEventSearchResult>
-            {
-                 new ItemEventSearchResult { ItemIdentifier = "1111", Location= "Salle 1", Time = DateTime.Now }
-            };
-
-            return Json(searchResults.ToArray());
-        }
     }
-
 }
