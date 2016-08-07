@@ -23,10 +23,10 @@ namespace GoodsTracking.Web.Controllers
             {
                 ModelState.Clear();
                 ContainerService.AddItem(model.Identifier,model.Description);
-                return Index();
+                return View("~/Views/Container/Index.cshtml");
             }
 
-            return View("~/Views/Tracker/Index.cshtml", model);
+            return View("~/Views/Container/Index.cshtml", model);
         }
     }
 }
