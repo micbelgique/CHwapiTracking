@@ -23,7 +23,7 @@ namespace GoodsTracking.Web.Controllers
             {
                 ModelState.Clear();
                 PackageService.AddItems(homeViewModel.ContainerIdentifier,
-                                        homeViewModel.ItemIdentifiers,
+                                        homeViewModel.ItemIdentifiers.Where(i => !string.IsNullOrWhiteSpace(i)).ToArray(),
                                         homeViewModel.ContainerComments);
                 return View("~/Views/Active/Index.cshtml");
             }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoodsTracking.Services.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,15 @@ namespace GoodsTracking.Services
 {
     public class DashboardService
     {
-        //public 
+        //public DashboardData GetDashboardData()
+        //{
+        //    //new DashboardData
+        //    //{
+        //    //     MovementsByItemType = new Dictionary<string, int>
+        //    //     {
+        //    //         [""] = new Random().Next()
+        //    //     }
+        //    //}
+        //}
     }
 }
