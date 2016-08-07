@@ -21,7 +21,7 @@ namespace GoodsTracking.DataAccess
             _dbSet = dataContext.Set<TEntity>();
         }
 
-        public virtual IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null,
+        public virtual IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> filter = null,
                                                 Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
                                                 params string[] includedProperties)
         {
@@ -100,7 +100,7 @@ namespace GoodsTracking.DataAccess
 
         public IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> where)
         {
-            return _dbSet.Where(where).ToList();
+            return _dbSet.Where(where).Include("Item").ToList();
         }
 
         public bool Exists(int id)

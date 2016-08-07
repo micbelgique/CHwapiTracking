@@ -12,14 +12,18 @@
 
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) { 
+/*@media (min-width: 768px) {
     .row.vertical-align {
         display: flex;
         align-items: center;
     }
-}
- /*.icon_add {
+}*/
+/*.icon_add {
     width: 30px;
     height: 30px;
     background: url("add.png") no-repeat scroll 0 0 transparent;
  }*/
+
+.infoMessage {
+    padding: 15px;
+}

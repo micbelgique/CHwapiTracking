@@ -14,7 +14,9 @@ namespace GoodsTracking.DataAccess
         public DataContext(string connectionString)
             : base(connectionString)
         {
+            
             Database.SetInitializer(new DevelopmentInitializer());
+
         }
 
         public virtual void Commit()

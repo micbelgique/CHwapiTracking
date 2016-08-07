@@ -1,4 +1,5 @@
 ﻿using GoodsTracking.Services;
+using GoodsTracking.Services.DTOs;
 using GoodsTracking.Web.Payload;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,5 @@ namespace GoodsTracking.Web.Controllers
 
             return Ok(checkPointData);
         }
-
-    
     }
-
 }

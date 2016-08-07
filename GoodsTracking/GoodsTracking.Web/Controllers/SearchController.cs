@@ -1,4 +1,6 @@
 ﻿using GoodsTracking.Services;
+using GoodsTracking.Services.DTOs;
+using GoodsTracking.Web.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,20 +14,24 @@ namespace GoodsTracking.Web.Controllers
         // GET: Search
         public ActionResult Index()
         {
-            return View();
+            var model = new SearchViewModel();
+            model.SearchResults = new List<ItemEventSearchResult>();
+            return View(model);
         }
 
-        [HttpGet]
-        public dynamic Search(string identifier)
+        [HttpPost]
+        public ActionResult Search(SearchViewModel model)
         {
-            var eventService = new EventService();
-
-            var searchResults =  eventService.Search(identifier);
-
-            return new
+            if (ModelState.IsValid)
             {
-                data = searchResults.ToArray()
-            };
+                var eventService = new EventService();
+
+                var searchResults = eventService.Search(model.ContainerIdentifier);
+
+                model.SearchResults = searchResults;
+
+            }
+            return View("Index", model);
         }
     }
 }

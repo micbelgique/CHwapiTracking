@@ -84,11 +84,15 @@ namespace GoodsTracking.Services
             return true;
         }
 
-        public bool RemoveItem(string containerIdentifier, string itemIdentifier)
+        public bool RemoveItems(string containerIdentifier, string[] itemIdentifiers)
         {
             using (var unitOfWork = UnitOfWorkFactory.CreateAutoCommit())
             {
-
+                foreach (string itemIdentifier in itemIdentifiers)
+                {
+                    unitOfWork.GetRepository<Package>().Delete(p => p.Item.Identifier == itemIdentifier && p.Container.Identifier == containerIdentifier);
+                    return true;
+                }
             }
             return true;
         }

@@ -15,7 +15,7 @@ namespace GoodsTracking.Interfaces
 
         void Delete(Expression<Func<TEntity, bool>> where);
 
-        //IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, params string[] includedProperties);
+        IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> filter = null, Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null, params string[] includedProperties);
 
         void Insert(TEntity entity);
 
@@ -29,9 +29,6 @@ namespace GoodsTracking.Interfaces
 
         // Gets all entities of type T
         IEnumerable<TEntity> GetAll();
-
-        // Gets entities using delegate
-        IEnumerable<TEntity> GetMany(Expression<Func<TEntity, bool>> where);
 
         bool Exists(int id);
 

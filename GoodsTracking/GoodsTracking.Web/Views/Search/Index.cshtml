@@ -1,35 +1,50 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@using GoodsTracking.Web.ViewModels
+
+@model SearchViewModel
+
+@using (Html.BeginForm("Search", "Search", FormMethod.Post, new { @class = "form-signin", @id = "ResearchForm" }))
+{
+    <div class="row">
+        <div class="col-md-4">
+            @Html.LabelFor(m => m.ContainerIdentifier, "Contenu") :
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(m => m.ContainerIdentifier, new { @autofocus = "autofocus", @class = "form-control" })
+        </div>
+        <div class="col-md-4">
+            <button id="btnSearch" class="btn btn btn-primary btn-block" type="submit">Rechercher</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            @Html.ValidationMessageFor(m => m.ContainerIdentifier, null, new { @class = "text-danger" })
+        </div>
+    </div>
+    <br />
+    if (Model.SearchResults != null && Model.SearchResults.Any())
+    {
+        <table id="gvSearchResults" class="table table-striped chwapitable">
+            <thead>
+                <tr>
+                    <th>Localisation</th>
+                    <th>Date - Heure</th>
+                </tr>
+            </thead>
+            @foreach (var searchResult in Model.SearchResults)
+            {
+                <tr>
+                    <td>@searchResult.Location</td>
+                    <td>@searchResult.Time.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                </tr>
+            }
+        </table>
+    }
+    else
+    {
+        <div>
+            <p class="infoMessage bg-warning">Aucun résultat</p>
+        </div>
+    }
 }
-
-@*@using (Html.BeginForm("Research", "Home", FormMethod.Post, new { @class = "form-signin", @id = "ResearchForm" }))
-    {*@
-
-<div class="row">
-    <div class="col-md-4">
-        @*@Html.LabelFor(m => m.ContainerIdentifier, "Contenu");*@
-        <label for="txtContainer">Contenu</label> :
-    </div>
-    <div class="col-md-4">
-        @*@Html.TextBoxFor(m => m.ContainerIdentifier, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })*@
-        <input type="text" id="txtContainer" class="form-control" required autofocus>
-    </div>
-    <div class="col-md-4">
-        <button id="btnSearch" class="btn btn btn-primary btn-block" type="submit">Rechercher</button>
-    </div>
-</div>
-
-<br />
-
-<table id="gvSearchResults" class="table table-striped chwapitable">
-    <thead>
-        <tr>
-            <th>Localisation</th>
-            <th>Date - Heure</th>
-        </tr>
-    </thead>
-</table>
-
-<script type="text/javascript">
-
-</script>

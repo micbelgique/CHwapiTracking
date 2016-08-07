@@ -10,5 +10,9 @@ namespace GoodsTracking.Web.Controllers
     public abstract class WebControllerBase : Controller
     {
         protected PackageService PackageService => new PackageService();
+        protected TrackerService TrackerService => new TrackerService();
+        protected AreaService AreaService => new AreaService();
+        protected ContainerService ContainerService => new ContainerService();
+        protected ItemService ItemService => new ItemService();
     }
 }
