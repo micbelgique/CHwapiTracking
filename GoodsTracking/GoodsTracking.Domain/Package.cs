@@ -10,10 +10,10 @@ namespace GoodsTracking.Domain
     public class Package : EntityBase
     {
         [Required]
-        public Container Container { get; set; }
+        public virtual Container Container { get; set; }
 
         [Required]
-        public Item Item { get; set; }
+        public virtual Item Item { get; set; }
         
         public string Comment { get; set; }
         

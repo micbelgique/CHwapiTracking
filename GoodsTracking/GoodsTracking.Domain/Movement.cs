@@ -11,10 +11,10 @@ namespace GoodsTracking.Domain
     public class Movement : EntityBase
     {
         [Required]
-        public Container Container { get; set; }
+        public virtual Container Container { get; set; }
 
         [Required]
-        public Area Destination { get; set; }
+        public virtual Area Destination { get; set; }
 
         [TextLength]
         public string Comment { get; set; }

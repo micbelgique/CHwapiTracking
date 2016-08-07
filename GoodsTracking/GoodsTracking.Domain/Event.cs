@@ -13,12 +13,12 @@ namespace GoodsTracking.Domain
         public EventType Type { get; set; }
 
         [Required]
-        public Container Container { get; set; }
+        public virtual Container Container { get; set; }
 
         [Required]
-        public Tracker Tracker { get; set; }
+        public virtual Tracker Tracker { get; set; }
 
         [Required]
-        public DateTime Time { get; set; }
+        public virtual DateTime Time { get; set; }
     }
 }

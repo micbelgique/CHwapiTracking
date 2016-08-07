@@ -10,7 +10,7 @@ namespace GoodsTracking.Domain
     public class Tracker : EntityBase
     {
         [Required]
-        public Area Area { get; set; }
+        public virtual Area Area { get; set; }
 
         [Required]
         public TrackerType Type { get; set; }

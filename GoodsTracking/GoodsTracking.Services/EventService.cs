@@ -16,14 +16,14 @@ namespace GoodsTracking.Services
             using (IUnitOfWork unitOfWork = UnitOfWorkFactory.Create())
             {
                 var container = unitOfWork.GetRepository<Package>()
-                                          .GetMany(p => p.Item.Identifier.Equals(itemIdentifier, StringComparison.InvariantCultureIgnoreCase)
-                                                     && p.Out == null)
+                                          .GetAll()
+                                          .Where(p => p.Item.Identifier == itemIdentifier)
                                           .OrderByDescending(p => p.In)
                                           .Select(p => p.Container)
                                           .FirstOrDefault();
 
                 var searchResults = unitOfWork.GetRepository<Event>()
-                                       .GetMany(e => e.Container == container)
+                                       .GetMany(e => e.Container.Identifier == container.Identifier, null, "Tracker", "Tracker.Area")
                                        .Select(e => new ItemEventSearchResult
                                        {
                                            ItemIdentifier = itemIdentifier,

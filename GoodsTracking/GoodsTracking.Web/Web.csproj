@@ -382,6 +382,7 @@
     <Compile Include="Controllers\StopTrackingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TrackerController.cs" />
     <Compile Include="Controllers\WebControllerBase.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -392,6 +393,7 @@
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\StopTrackingViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\TrackerViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -414,6 +416,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\App_Start\" />
+    <Folder Include="Views\Tracker\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GoodsTracking.Interfaces\Interfaces.csproj">
