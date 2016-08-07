@@ -41,6 +41,12 @@
                                 <span>Accueil</span>
                             </a>
                         </li>
+                        <li class=@(activeController == "Map" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Map")">
+                                <i class="glyphicon glyphicon-map-marker"></i>
+                                <span>Map</span>
+                            </a>
+                        </li>
                         <li class=@(activeController == "Tracker" ? "active" : string.Empty)>
                             <a href="@Url.Action("Index", "Tracker")">
                                 <i class="glyphicon glyphicon-plus"></i>
