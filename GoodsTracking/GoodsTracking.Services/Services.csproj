@@ -46,6 +46,7 @@
     <Compile Include="EventService.cs" />
     <Compile Include="ItemService.cs" />
     <Compile Include="AreaService.cs" />
+    <Compile Include="ContainerService.cs" />
     <Compile Include="TrackerService.cs" />
     <Compile Include="PackageService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
