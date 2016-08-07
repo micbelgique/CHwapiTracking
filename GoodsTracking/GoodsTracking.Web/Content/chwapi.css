@@ -1,6 +1,6 @@
-h1 {
-    text-shadow: -2px 2px 2px #777;
-    color: #E6E6E6;
+.chwapih1 {
+  text-shadow: -2px 2px 2px #777;
+  color: #E6E6E6;    
 }
 
 .chwapitable thead {
@@ -10,7 +10,25 @@ h1 {
     background-color: #87C2D9;
 }
 
+.glyphicon-db {
+  font-size: 4.0em;
+  opacity: 0.2;   
+}
 
+.chwapidbglyph {
+    float: right; /* **children floated left** */
+    margin: 0 5px;
+}
+
+.chwapidbh1 {
+  font-size: 48px;
+  opacity: 0.5;   
+}
+
+.chwapidbtext {
+  font-size: 18px;
+  font-weight: bold;
+}
 /* Small devices (tablets, 768px and up) */
 /*@media (min-width: 768px) {
     .row.vertical-align {
