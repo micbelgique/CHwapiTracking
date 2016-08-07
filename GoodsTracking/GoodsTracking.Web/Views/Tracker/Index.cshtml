@@ -6,7 +6,7 @@
 {
     <div class="row">
         <div class="col-md-6">
-            @Html.LabelFor(model => model.Id, "Identifiant (obligatoire)");
+            @Html.LabelFor(model => model.Id, "Nom du portique (obligatoire)")
         </div>
         <div class="col-md-6">
             @Html.TextBoxFor(m => m.Id, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            @Html.LabelFor(m => m.TrackerTypes, "Type de portique (obligatoire)");
+            @Html.LabelFor(m => m.TrackerTypes, "Type de portique (obligatoire)")
         </div>
         <div class="col-md-6">
             @Html.DropDownListFor(m => m.TrackerType, Model.TrackerTypes, new { @class = "form-control" })
@@ -26,7 +26,7 @@
     <br />
     <div class="row">
         <div class="col-md-6">
-            @Html.LabelFor(m => m.Areas, "Area (obligatoire)");
+            @Html.LabelFor(m => m.Areas, "Area (obligatoire)")
         </div>
         <div class="col-md-6">
             @Html.DropDownListFor(m => m.AreaId, Model.Areas, new { @class = "form-control" })

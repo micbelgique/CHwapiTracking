@@ -6,7 +6,7 @@
 {
     <div class="row">
         <div class="col-md-6">
-            @Html.LabelFor(model => model.Identifier, "Identifiant (obligatoire)");
+            @Html.LabelFor(model => model.Identifier, "Identifiant (obligatoire)")
         </div>
         <div class="col-md-6">
             @Html.TextBoxFor(m => m.Identifier, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
@@ -16,7 +16,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            @Html.LabelFor(model => model.Description, "Description (obligatoire)");
+            @Html.LabelFor(model => model.Description, "Description (obligatoire)")
         </div>
         <div class="col-md-6">
             @Html.TextBoxFor(m => m.Description, new { @required = "required", @autofocus = "autofocus", @class = "form-control" })
