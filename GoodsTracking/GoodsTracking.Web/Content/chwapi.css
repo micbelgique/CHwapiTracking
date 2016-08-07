@@ -12,12 +12,12 @@ h1 {
 
 
 /* Small devices (tablets, 768px and up) */
-@media (min-width: 768px) {
+/*@media (min-width: 768px) {
     .row.vertical-align {
         display: flex;
         align-items: center;
     }
-}
+}*/
 /*.icon_add {
     width: 30px;
     height: 30px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoodsTracking</title>
+    <title>CHwapi Tracking</title>
     @Styles.Render("~/content/css")
     <meta name="description" content="GoodsTracking" />
 </head>
@@ -29,17 +29,51 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="@Url.Action("Index", "Home")">Accueil</a>
                 </div>
-
                 <div class="collapse navbar-collapse" id="navbar">
                     <ul class="nav navbar-nav">
-                        <li class=@(activeController == "Tracker" ? "active" : string.Empty)>@Html.ActionLink("Ajouter un portique", "Index", "Tracker")</li>
-                        <li class=@(activeController == "Container" ? "active" : string.Empty)>@Html.ActionLink("Ajouter un contenant", "Index", "Container")</li>
-                        <li class=@(activeController == "Item" ? "active" : string.Empty)>@Html.ActionLink("Ajouter un item", "Index", "Item")</li>
-                        <li class=@(activeController == "Active" ? "active" : string.Empty)>@Html.ActionLink("Activer la traçabilité d'un colis", "Index", "Active")</li>
-                        <li class=@(activeController == "StopTracking" ? "active" : string.Empty)>@Html.ActionLink("Stopper la traçabilité d'un colis", "Index", "StopTracking")</li>
-                        <li class=@(activeController == "Search" ? "active" : string.Empty)>@Html.ActionLink("Où se trouve mon colis?", "Index", "Search")</li>
+                        <li class=@(activeController == "Home" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Home")">
+                                <i class="glyphicon glyphicon-home"></i>
+                                <span>Accueil</span>
+                            </a>
+                        </li>
+                        <li class=@(activeController == "Tracker" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Tracker")">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>Portique</span>
+                            </a>
+                        </li>
+                        <li class=@(activeController == "Container" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Container")">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>Contenant</span>
+                            </a>
+                        </li>
+                        <li class=@(activeController == "Item" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Item")">
+                                <i class="glyphicon glyphicon-plus"></i>
+                                <span>Objet</span>
+                            </a>
+                        </li>
+                        <li class=@(activeController == "Active" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Active")">
+                                <i class="glyphicon glyphicon-log-in"></i>
+                                <span>Démarrer le suivi</span>
+                            </a>
+                        </li>
+                        <li class=@(activeController == "StopTracking" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "StopTracking")">
+                                <i class="glyphicon glyphicon-log-out"></i>
+                                <span>Arrêter le suivi</span>
+                            </a>
+                        </li>
+                        <li class=@(activeController == "Search" ? "active" : string.Empty)>
+                            <a href="@Url.Action("Index", "Search")">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <span>Tracking</span>
+                            </a>
+                        </li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
