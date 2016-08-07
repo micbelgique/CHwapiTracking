@@ -2,7 +2,7 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using (Html.BeginForm("AddItem", "Item", FormMethod.Post, new { @class = "form-signin", @id = "addTrackerForm" }))
+@using (Html.BeginForm("AddItem", "Item", FormMethod.Post, new { @class = "form-signin", @id = "addItemForm" }))
 {
     <div class="row">
         <div class="col-md-6">
@@ -26,4 +26,22 @@
     <br />
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Ajouter le contenu</button>
+}
+
+@section scripts{
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+            /*
+             * Deactivate enter on form
+             */
+            $("#addItemForm").keypress(function (event) {
+                if (event.which == '13') {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
 }
