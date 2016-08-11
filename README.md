@@ -31,23 +31,22 @@ Ergonomic and realibale solution to track the flow of packages inside the CHWapi
  2. Create the Database in Azure and set the connection string in web.config
  3. Build project and publish on IIS (or azure)
  
- 
- ## Screenshot
+## Screenshot ##
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/Dashboard.png" alt="Dashboard"/></div>
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/AddGate.png" alt="Add gate"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/Dashboard.png" alt="Dashboard"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/AddGate.png" alt="Add gate"/></div>
   </div>
   <div class="row">
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/AddBox.png" alt="Add box"/></div>
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/AddItem.png" alt="Add Item"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/AddBox.png" alt="Add box"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/AddItem.png" alt="Add Item"/></div>
   </div>
   <div class="row">
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/StartTracking.png" alt="Start Tracking"/></div>
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/StopTracking.png" alt="Stop Tracking"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/StartTracking.png" alt="Start Tracking"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/StopTracking.png" alt="Stop Tracking"/></div>
   </div>
   <div class="row">
-    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/tree/master/GoodsTracking/Documentation/Search.png" alt="Search"/></div>
+    <div class="col-md-6"><img src="https://github.com/micbelgique/DevCamp2016-TeamOne/blob/master/GoodsTracking/Documentation/Search.png" alt="Search"/></div>
   </div>
 </div>
